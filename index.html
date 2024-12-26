@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H3MSC HS4 Web Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .slideshow-container {
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .mySlides {
+            display: none;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+        }
+        .content {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        .content img {
+            width: 150px;
+            height: auto;
+        }
+        .content h1 {
+            font-size: 3em;
+        }
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 20%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 15px;
+            z-index: 10;
+        }
+        .navbar a {
+            display: block;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .famous-places {
+            margin-top: 20px;
+        }
+        .famous-places ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .famous-places ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="mySlides" style="background-image: url('tajmahal.jpg');"></div>
+    <div class="mySlides" style="background-image: url('redfort.jpg');"></div>
+    <div class="mySlides" style="background-image: url('indiagate.jpg');"></div>
+    <div class="mySlides" style="background-image: url('gatewayofindia.jpg');"></div>
+</div>
+
+<div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#abode">Abode</a>
+    <a href="#userdetails">User Details</a>
+    <div class="famous-places">
+        <h3>Famous Places</h3>
+        <ul>
+            <li>Taj Mahal</li>
+            <li>Red Fort</li>
+            <li>India Gate</li>
+            <li>Gateway of India</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <img src="logo.png" alt="Logo">
+    <h1>Tourist</h1>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+</script>
+
+</body>
+</html>
